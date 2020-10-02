@@ -1,12 +1,12 @@
 /* General Rulesets */
 
 * {
-  color: #ffffff;
+  box-sizing: border-box;
 }
 
 body {
   font-family: Helvetica, sans-serif;
-
+  color: #ffffff;
   background-size: cover;
   margin: 0;
 }
@@ -16,10 +16,12 @@ a {
 }
 
 footer {
+  color: black;
   width: 100%;
   text-align: center;
   bottom: 0;
   position: static;
+  margin-top: 150px;
 }
 
 header {
@@ -29,9 +31,6 @@ header {
   background: url("https://images.pexels.com/photos/1416367/pexels-photo-1416367.jpeg?cs=srgb&dl=pexels-steve-johnson-1416367.jpg&fm=jpg")
     no-repeat center center fixed;
   background-size: cover;
-}
-
-.branding {
 }
 
 .container {
@@ -195,3 +194,21 @@ del {
 }
 
 /* Gallery */
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+  padding: 5px;
+}
+
+.grid-item img {
+  display: block;
+  width: 100%;
+}
+#content {
+  width: 80vw;
+  margin: 30px auto;
+}

@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="node_modules\handlebars\dist\handlebars.min.js"></script>
     <script id="templateHB" type="x-handlebars-template">
+      <div class="grid-sizer"></div>
       {{#each paintings}}
       <div class="grid-item">
         <img class="image" src="{{this.image}}" alt={{this.title}} />
@@ -22,18 +23,13 @@
       <nav>
         <ul class="navbar">
           <li class="current"><a href="index.html">Galería</a></li>
-          <li><a href="store.html">Blog</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="store.html">Historia</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
     </header>
-    <section id="content" class="grid">
-      <div class="grid-item">...</div>
-      <div class="grid-item grid-item--width2">...</div>
-      <div class="grid-item">...</div>
-      ...
-    </section>
+    <section id="content" class="grid"></section>
     <footer><p>&copy; Pintorx</p></footer>
     <script src="./public/main.js"></script>
   </body>
