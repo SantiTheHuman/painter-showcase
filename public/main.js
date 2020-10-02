@@ -12,39 +12,31 @@ const context = {
       price: "$1,999.00",
       sale: "$1,699.89",
     },
+  ],
+  paintings: [
     {
+      title: "Forest memories",
+      year: "2010",
       image:
-        "https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/electric-guitar.png",
-      name: "Electric Guitar",
-      description:
-        "Join the legends of the '50s and '60s when the marriage of guitar and electricity created the most influential instrument of a generation. Note: picks sold separately.",
-      price: "$599.99",
+        "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     },
     {
+      title: "Turbulence",
+      year: "2017",
       image:
-        "https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/bass-guitar.png",
-      name: "Bass Guitar",
-      description:
-        "Experience the embodiment of funkadelic frequencies that is the bass guitar. Let the deep low notes of the bass guitar resonate with heartbeats everywhere.",
-      price: "$624.99",
+        "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
+      title: "Rage",
+      year: "2019",
       image:
-        "https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/drum-kit.png",
-      name: "Drum Kit",
-      description:
-        'Ever thought, "one instrument isn\'t enough?" Find an answer in the drum kit. Coordinate a collections of drums and cymbals to dictate the rhythm of musical masterpiece.',
-      price: "$649.00",
-      sale: "$349.00",
+        "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
-    {
-      image:
-        "https://content.codecademy.com/courses/learn-handlebars/musicon/violin.png",
-      name: "Violin",
-      description:
-        "A versatile that is suited for any and all occasions. Those wearing tuxedos can strum together a classic. Others who prefer overalls can call it a fiddle and play some folk songs.",
-      price: "$245.00",
-    },
+    // {
+    //   title: '',
+    //   year: '',
+    //   image: "",
+    // },
   ],
 };
 
@@ -56,4 +48,6 @@ const template = Handlebars.compile(templateSource);
 
 const compiledHtml = template(context);
 
-document.getElementById("information").innerHTML = compiledHtml;
+document.getElementById("content").innerHTML = compiledHtml;
+
+// Gallery

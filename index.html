@@ -5,31 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Musicon</title>
     <link rel="stylesheet" href="public/style.css" />
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="node_modules\handlebars\dist\handlebars.min.js"></script>
     <script id="templateHB" type="x-handlebars-template">
-      <h1>{{title}}</h1>
-      <p>{{body}}</p>
-      <a href="store.html">Shop Now</a>
+      {{#each paintings}}
+      <div class="grid-item">
+        <img class="image" src="{{this.image}}" alt={{this.title}} />
+      </div>
+      {{/each}}
     </script>
   </head>
   <body>
     <header>
-      <section class="container">
-        <h1 class="branding">Musicon</h1>
+      <h1 class="branding">Pintorx</h1>
 
-        <nav>
-          <ul class="navbar">
-            <li class="current"><a href="index.html">Home</a></li>
-            <li><a href="store.html">Store</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </section>
+      <nav>
+        <ul class="navbar">
+          <li class="current"><a href="index.html">Galería</a></li>
+          <li><a href="store.html">Blog</a></li>
+          <li><a href="store.html">Historia</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
-    <article id="introduction">
-      <section id="information" class="container"></section>
-    </article>
-    <footer><p>&copy; Musicon</p></footer>
+    <section id="content" class="grid">
+      <div class="grid-item">...</div>
+      <div class="grid-item grid-item--width2">...</div>
+      <div class="grid-item">...</div>
+      ...
+    </section>
+    <footer><p>&copy; Pintorx</p></footer>
     <script src="./public/main.js"></script>
   </body>
 </html>
