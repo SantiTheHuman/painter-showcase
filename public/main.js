@@ -1,16 +1,31 @@
 const context = {
-  title: "Welcome to Musicon",
-  body:
-    "Musicon is a budding musical storefront with a mission to share the joy of music. These magnificent auditory tools are designed with musical creators, like you, in mind. Hobbyists, beginners, and experts alike can appreciate the resplendent sounds supplied by each and every instrument we carry. Join us in delivering the euphoric vibrations of melodia to the citizens of the world!",
-  instruments: [
+  posts: [
     {
+      date: "09.09.2020",
       image:
         "https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/electronic-keyboard.png",
-      name: "Electronic Keyboard",
-      description:
+      alt: "Pintando",
+      title: "Electronic Keyboard",
+      text:
         "A piano welcomed to the 21th century. Pianists celebrate the compact form factor and the diversity of synthesized rhythms all in one masterful musical machine.",
-      price: "$1,999.00",
-      sale: "$1,699.89",
+    },
+    {
+      date: "09.09.2020",
+      image:
+        "https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/electronic-keyboard.png",
+      alt: "Pintando",
+      title: "Electronic Keyboard",
+      text:
+        "A piano welcomed to the 21th century. Pianists celebrate the compact form factor and the diversity of synthesized rhythms all in one masterful musical machine.",
+    },
+    {
+      date: "09.09.2020",
+      image:
+        "https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/electronic-keyboard.png",
+      alt: "Pintando",
+      title: "Electronic Keyboard",
+      text:
+        "A piano welcomed to the 21th century. Pianists celebrate the compact form factor and the diversity of synthesized rhythms all in one masterful musical machine.",
     },
   ],
   paintings: [

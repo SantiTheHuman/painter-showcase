@@ -6,7 +6,7 @@
 
 body {
   font-family: Helvetica, sans-serif;
-  color: #ffffff;
+  color: white;
   background-size: cover;
   margin: 0;
 }
@@ -31,16 +31,6 @@ header {
   background: url("https://images.pexels.com/photos/1416367/pexels-photo-1416367.jpeg?cs=srgb&dl=pexels-steve-johnson-1416367.jpg&fm=jpg")
     no-repeat center center fixed;
   background-size: cover;
-}
-
-.container {
-  width: 100%;
-  height: 1000px;
-  background-color: rgb(255, 255, 255);
-}
-
-.container h1 {
-  font-weight: normal;
 }
 
 .navbar {
@@ -95,14 +85,19 @@ header {
   background-color: rgb(83, 139, 243);
 }
 
-/* Store Page Rulesets */
+/* Blog Page Rulesets */
 
-#showcase {
-  margin-top: 5%;
-  margin-bottom: 15%;
+.blog-container {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
 }
 
-.instrument {
+.blog-container h2 {
+  font-weight: normal;
+}
+
+.blog-post {
+  color: black;
   width: 90%;
   overflow: auto;
   background-color: rgb(255, 255, 255, 0.9);
@@ -111,26 +106,12 @@ header {
   border-radius: 5px;
 }
 
-.image {
+.blog-image {
   display: inline-block;
   vertical-align: middle;
   width: 32%;
   min-width: 100px;
   margin: 0 auto;
-}
-
-.details {
-  display: inline-block;
-  vertical-align: middle;
-  width: 60%;
-  padding: 2%;
-}
-
-.name,
-.description,
-.price,
-del {
-  color: black;
 }
 
 .description {
@@ -139,41 +120,13 @@ del {
   overflow: auto;
 }
 
-.price {
-  margin-bottom: 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.sale {
-  color: #fa4359;
-  margin-top: 7px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
 /* Contact Page Ruleset */
 
 #connection {
+  color: black;
   width: 100%;
   margin: 15% auto;
   text-align: center;
-}
-
-#top {
-  margin: 15% auto;
-}
-
-#top h2 {
-  margin: 3%;
-  font-weight: normal;
-  font-size: 30px;
-}
-
-#top p {
-  margin: 3%;
-  font-size: 18px;
-  font-weight: lighter;
 }
 
 .contact {

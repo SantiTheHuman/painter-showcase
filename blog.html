@@ -7,33 +7,16 @@
     <link rel="stylesheet" href="public/style.css" />
     <script src="node_modules\handlebars\dist\handlebars.min.js"></script>
     <script id="templateHB" type="text/x-handlebars-template">
-      {{#each instruments}}
-        <article class="instrument">
-          <img class="image" src="{{this.image}}" alt={{this.name}} />
-          <section class="details">
-            <h2 class="name">
-              {{this.name}}
+      {{#each posts}}
+        <article class="blog-post">
+          <img class="blog-image" src="{{this.image}}" alt={{this.alt}} />
+          <section class="blog-text">
+            <h2 class="title">
+              {{this.title}}
             </h2>
             <p class="description">
-              {{this.description}}
+              {{this.text}}
             </p>
-            {{#if sale}}
-              <p class="price">
-                <del>
-                  {{this.price}}
-                </del>
-              </p>
-              <p class="sale">
-                {{this.sale}}
-              </p>
-              <p class="deal">
-                {{this.sale}}
-              </p>
-            {{else}}
-              <p class="price">
-                {{this.price}}
-              </p>
-            {{/if}}
           </section>
         </article>
       {{/each}}
@@ -41,22 +24,22 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <h1 class="branding">Musicon</h1>
+      <h1 class="branding">Pintorx</h1>
 
-        <nav>
-          <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li class="current"><a href="store.html">Store</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </section>
+      <nav>
+        <ul class="navbar">
+          <li><a href="index.html">Galería</a></li>
+          <li class="current"><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">Historia</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
     </header>
-    <article id="showcase">
-      <section id="information" class="container"></section>
-    </article>
-    <footer><p>&copy; Musicon</p></footer>
+    </header>
+    
+    <section id="content" class="container"></section>
+    
+    <footer><p>&copy; Pintorx</p></footer>
     <script src="./public/main.js"></script>
   </body>
 </html>
