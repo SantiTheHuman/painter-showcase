@@ -3,24 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Musicon</title>
+    <title>Pintorx</title>
     <link rel="stylesheet" href="public/style.css" />
-
-    <script src="node_modules\handlebars\dist\handlebars.min.js"></script>
-    <script id="templateHB" type="x-handlebars-template">
-      <div class="grid-sizer"></div>
-      {{#each paintings}}
-      <div class="grid-item">
-        <img class="image" src="{{this.image}}" alt={{this.title}} />
-      </div>
-      {{/each}}
-    </script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    
   </head>
   <body>
     <header>
       <h1 class="branding">Pintorx</h1>
-
       <nav>
         <ul class="navbar">
           <li class="current"><a href="index.html">Galería</a></li>
@@ -30,8 +19,23 @@
         </ul>
       </nav>
     </header>
-    <section id="content" class="grid"></section>
+    
+    <div id="content" class="grid"></div>
     <footer><p>&copy; Pintorx</p></footer>
+    
+    <script src="node_modules\handlebars\dist\handlebars.min.js"></script>
+    <script id="templateHB" type="x-handlebars-template">
+      {{#each paintings}}
+      <div class="grid-item">
+        <img class="image" src="{{this.image}}" alt={{this.title}} />
+      </div>
+      {{/each}}
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="./public/main.js"></script>
+    
   </body>
 </html>

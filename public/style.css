@@ -19,9 +19,10 @@ footer {
   color: black;
   width: 100%;
   text-align: center;
-  bottom: 0;
   position: static;
-  margin-top: 150px;
+  bottom: 0;
+  margin-top: 100px;
+  
 }
 
 header {
@@ -34,7 +35,6 @@ header {
 }
 
 .navbar {
-  margin-top: ;
   list-style: none;
   padding-inline-start: 0px;
 }
@@ -147,21 +147,28 @@ header {
 }
 
 /* Gallery */
-.grid-sizer,
-.grid-item {
-  width: 33.333%;
+.grid {
+  margin: auto 10vw;
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
 }
-
 .grid-item {
-  float: left;
+  cursor: pointer;
+  display: inline-block;
   padding: 5px;
 }
+/* clear fix */
+
+/* ---- .grid-item ---- */
 
 .grid-item img {
-  display: block;
   width: 100%;
+  height: auto;
+  page-break-inside: avoid; /* For Firefox. */
+  -webkit-column-break-inside: avoid; /* For Chrome & friends. */
+  break-inside: avoid; /* For standard browsers like IE. :-) */
 }
-#content {
-  width: 80vw;
-  margin: 30px auto;
-}
+

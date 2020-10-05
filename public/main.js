@@ -1,3 +1,5 @@
+
+
 const context = {
   posts: [
     {
@@ -36,16 +38,22 @@ const context = {
         "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     },
     {
+      title: "Forest",
+      year: "2010",
+      image:
+        "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    },
+    {
       title: "Turbulence",
       year: "2017",
       image:
         "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
-      title: "Rage",
-      year: "2019",
+      title: "Turbulence",
+      year: "2017",
       image:
-        "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
       title: "Forest",
@@ -65,17 +73,12 @@ const context = {
       image:
         "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
+    
     {
-      title: "Forest",
-      year: "2010",
+      title: "Rage",
+      year: "2019",
       image:
-        "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-    },
-    {
-      title: "Turbulence",
-      year: "2017",
-      image:
-        "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
       title: "Rage",
@@ -101,12 +104,14 @@ const compiledHtml = template(context);
 
 document.getElementById("content").innerHTML = compiledHtml;
 
+
 // Gallery
-var elem = document.querySelector(".grid");
-var msnry = new Masonry(elem, {
-  // options
-  columnWidth: ".grid-sizer",
-  itemSelector: ".grid-item",
-  percentPosition: true,
-  gutter: 0,
+$(function() {
+  var $container = $(".grid");
+});
+
+var $grid = $('.grid');
+
+$grid.imagesLoaded().progress( function() {
+  $grid.masonry('layout');
 });
