@@ -26,8 +26,8 @@ footer {
 }
 
 header {
-  padding-top: 3%;
-  height: 70vh;
+  padding: 30vh 0px;
+  min-height: 400px;
   text-align: center;
   background: url("https://images.pexels.com/photos/1416367/pexels-photo-1416367.jpeg?cs=srgb&dl=pexels-steve-johnson-1416367.jpg&fm=jpg")
     no-repeat center center fixed;
@@ -84,6 +84,72 @@ header {
 #introduction a:hover {
   background-color: rgb(83, 139, 243);
 }
+
+/* Gallery */
+.grid {
+  margin: 30px 10vw;
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
+}
+.grid-item {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.grid img {
+  width: 100%;
+  height: auto;
+  page-break-inside: avoid; /* For Firefox. */
+  -webkit-column-break-inside: avoid; /* For Chrome & friends. */
+  break-inside: avoid; /* For standard browsers like IE. :-) */
+  
+}
+@media (hover: hover) {
+  .grid img {
+    transition: 500ms;
+  }
+  .grid img:hover {
+    filter: brightness(110%);
+  }
+}
+
+/* Modal slideshow */
+
+.modal {
+  display: ;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+    overflow: auto;
+}
+
+.modal-content {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgb(255, 255, 255, 0.4); */
+}
+
+.mySlides,
+.mySlides img {
+  height: 100%;
+  max-width: 100%;
+}
+
+.mySlides img {
+  display: block;
+  margin: auto;
+  padding: 5vh 0;
+}
+
 
 /* Blog Page Rulesets */
 
@@ -146,29 +212,5 @@ header {
   list-style: none;
 }
 
-/* Gallery */
-.grid {
-  margin: auto 10vw;
-  line-height: 0;
-  -webkit-column-count: 3;
-  -webkit-column-gap: 0px;
-  column-count: 3;
-  column-gap: 0px;
-}
-.grid-item {
-  cursor: pointer;
-  display: inline-block;
-  padding: 5px;
-}
-/* clear fix */
 
-/* ---- .grid-item ---- */
-
-.grid-item img {
-  width: 100%;
-  height: auto;
-  page-break-inside: avoid; /* For Firefox. */
-  -webkit-column-break-inside: avoid; /* For Chrome & friends. */
-  break-inside: avoid; /* For standard browsers like IE. :-) */
-}
 

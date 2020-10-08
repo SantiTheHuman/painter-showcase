@@ -38,6 +38,12 @@ const context = {
         "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     },
     {
+      title: "Turbulence",
+      year: "2017",
+      image:
+        "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    },
+    {
       title: "Forest",
       year: "2010",
       image:
@@ -50,16 +56,16 @@ const context = {
         "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
-      title: "Turbulence",
-      year: "2017",
-      image:
-        "https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
       title: "Forest",
       year: "2010",
       image:
         "https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    },
+    {
+      title: "Rage",
+      year: "2019",
+      image:
+        "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
     {
       title: "Turbulence",
@@ -80,12 +86,7 @@ const context = {
       image:
         "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     },
-    {
-      title: "Rage",
-      year: "2019",
-      image:
-        "https://images.pexels.com/photos/1183992/pexels-photo-1183992.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
+   
     // {
     //   title: '',
     //   year: '',
@@ -104,14 +105,31 @@ const compiledHtml = template(context);
 
 document.getElementById("content").innerHTML = compiledHtml;
 
+// var $modalPictures = $('#modal-pictures');
+
+// $modalPictures.prepend(compiledHtml);
+
+// const modalPictures = document.getElementById("modal-pictures");
+
+// modalPictures.innerHTML = compiledHtml;
+
+document.getElementById('modal-pictures').insertAdjacentHTML('afterbegin',
+compiledHtml);
+
+const mySlides = document.querySelectorAll("#modal-pictures div");
+
+mySlides.forEach(element => {
+  element.className = "mySlides";
+});
+
 
 // Gallery
 $(function() {
   var $container = $(".grid");
 });
 
-var $grid = $('.grid');
+// var $grid = $('.grid');
 
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry('layout');
-});
+// $grid.imagesLoaded().progress( function() {
+//   $grid.masonry('layout');
+// });
