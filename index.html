@@ -23,13 +23,10 @@
     <div id="content" class="grid"></div>
 
     <div id="myModal" class="modal">
-
-      <div id="modal-pictures" class="modal-content">
-
-        <div id="left"></div>
-        <div id="right"></div>
-      </div>
-
+      <div id="modal-pictures" class="modal-content"></div>
+      <div class="prev">&#10094;</div>
+      <div class="next">&#10095;</div>
+      
     </div>
 
     <footer><p>&copy; Pintorx</p></footer>
@@ -38,7 +35,7 @@
     <script id="templateHB" type="x-handlebars-template">
       {{#each paintings}}
       <div class="grid-item">
-        <img class="image" src="{{this.image}}" alt={{this.title}} />
+        <img src="{{this.image}}" alt={{this.title}} />
       </div>
       {{/each}}
     </script>

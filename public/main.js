@@ -105,21 +105,12 @@ const compiledHtml = template(context);
 
 document.getElementById("content").innerHTML = compiledHtml;
 
-// var $modalPictures = $('#modal-pictures');
+document.getElementById("modal-pictures").innerHTML = compiledHtml;
 
-// $modalPictures.prepend(compiledHtml);
+const slideContainer = document.querySelectorAll("#modal-pictures div");
 
-// const modalPictures = document.getElementById("modal-pictures");
-
-// modalPictures.innerHTML = compiledHtml;
-
-document.getElementById('modal-pictures').insertAdjacentHTML('afterbegin',
-compiledHtml);
-
-const mySlides = document.querySelectorAll("#modal-pictures div");
-
-mySlides.forEach(element => {
-  element.className = "mySlides";
+slideContainer.forEach(element => {
+  element.className = "slide-container";
 });
 
 
@@ -133,3 +124,56 @@ $(function() {
 // $grid.imagesLoaded().progress( function() {
 //   $grid.masonry('layout');
 // });
+
+
+// Modal slideshow
+
+function activateModal() {
+  openModal();
+  currentSlide(1);
+};
+
+function openModal() {
+  myModal.style.display = "block";
+}
+
+function closeModal() {
+  console.log("close");
+  myModal.style.display = "none";
+}
+
+var slideIndex = 1;
+
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("slide-container");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+
+  slides[slideIndex-1].style.display = "block";
+  
+}
+
+document.querySelectorAll(".grid-item").forEach(item => {
+  item.addEventListener('click', activateModal);
+});
+
+window.addEventListener("click", function(event) {
+  if (event.target.className == 'slide-container') {
+    myModal.style.display = "none";
+  }
+});
+  
