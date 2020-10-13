@@ -107,9 +107,9 @@ document.getElementById("content").innerHTML = compiledHtml;
 
 document.getElementById("modal-pictures").innerHTML = compiledHtml;
 
-const slideContainer = document.querySelectorAll("#modal-pictures div");
+const slideContainers = document.querySelectorAll("#modal-pictures div");
 
-slideContainer.forEach(element => {
+slideContainers.forEach(element => {
   element.className = "slide-container";
 });
 
@@ -128,52 +128,68 @@ $(function() {
 
 // Modal slideshow
 
+const gridItems = document.querySelectorAll(".grid-item img");
+
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+
+for (i = 0; i < gridItems.length; i++) {
+  gridItems[i].className = i + 1;
+};
+
 function activateModal() {
   openModal();
-  currentSlide(1);
+  showSlides(slideIndex = this.className);
 };
 
 function openModal() {
   myModal.style.display = "block";
-}
+};
 
 function closeModal() {
   console.log("close");
   myModal.style.display = "none";
-}
+};
 
-var slideIndex = 1;
-
+let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+  // console.log(n);
+  showSlides(n);
+  
+};
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
 
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("slide-container");
+  // console.log(n);
+  let i;
+  let slides = document.getElementsByClassName("slide-container");
+  // console.log(slides);
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
   }
+  slides[slideIndex - 1].style.display = "block";
 
-  slides[slideIndex-1].style.display = "block";
-  
-}
+  console.log(slideIndex);
+};
 
-document.querySelectorAll(".grid-item").forEach(item => {
+gridItems.forEach(item => {
   item.addEventListener('click', activateModal);
 });
 
+prevButton.addEventListener('click', function() {plusSlides(slideIndex -= 1)});
+nextButton.addEventListener('click', function() {plusSlides(slideIndex += 1)});
+
 window.addEventListener("click", function(event) {
   if (event.target.className == 'slide-container') {
-    myModal.style.display = "none";
+    closeModal();
   }
 });
   

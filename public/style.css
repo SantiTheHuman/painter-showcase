@@ -128,8 +128,7 @@ header {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  
-    /* overflow: auto; */
+  /* overflow: auto; */
 }
 
 .modal-content {
@@ -149,11 +148,11 @@ header {
   margin: auto;
   padding: 5vh 0;
   filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
-  z-index: 2;
+  /* z-index: 2; */
 }
 
-.prev,
-.next {
+#prev,
+#next {
   color: rgb(255, 255, 255, 0.5);
   position: fixed;
   cursor: pointer;
@@ -166,12 +165,12 @@ header {
   transition: 0.15s ease;
 }
 
-.next {
+#next {
   right: 0;
 }
 
-.prev:hover,
-.next:hover {
+#prev:hover,
+#next:hover {
   color: rgb(255, 255, 255, 0.7);
   background-color: rgba(0, 0, 0, 0.3);
 }
