@@ -1,4 +1,17 @@
+// Home 
 
+const gridSection = document.getElementById("content");
+const galleryButton = document.getElementById("bring-gallery-up");
+
+
+function moveGalleryUp() {
+  document.header.style.color = 'black';
+};
+
+galleryButton.addEventListener('click', moveGalleryUp);
+
+
+// Gallery
 
 const context = {
   posts: [
@@ -103,7 +116,7 @@ const template = Handlebars.compile(templateSource);
 
 const compiledHtml = template(context);
 
-document.getElementById("content").innerHTML = compiledHtml;
+gridSection.innerHTML = compiledHtml;
 
 document.getElementById("modal-pictures").innerHTML = compiledHtml;
 
@@ -114,33 +127,26 @@ slideContainers.forEach(element => {
 });
 
 
-// Gallery
-$(function() {
-  var $container = $(".grid");
-});
-
-// var $grid = $('.grid');
-
-// $grid.imagesLoaded().progress( function() {
-//   $grid.masonry('layout');
-// });
-
-
-// Modal slideshow
+// ~Modal slideshow~
 
 const gridItems = document.querySelectorAll(".grid-item img");
+
+const slides = document.querySelectorAll(".slide-container");
+
+let slideIndex = 1;
 
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
 
 for (i = 0; i < gridItems.length; i++) {
-  gridItems[i].className = i + 1;
+  gridItems[i].className = i;
 };
 
 function activateModal() {
+  slideIndex = parseInt(this.className);
   openModal();
-  showSlides(slideIndex = this.className);
+  showSlides();
 };
 
 function openModal() {
@@ -148,44 +154,36 @@ function openModal() {
 };
 
 function closeModal() {
-  console.log("close");
   myModal.style.display = "none";
 };
 
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
+function changeSlide(n) {
   // console.log(n);
-  showSlides(n);
-  
-};
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
-
-function showSlides(n) {
-  // console.log(n);
-  let i;
-  let slides = document.getElementsByClassName("slide-container");
-  // console.log(slides);
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  slides[slideIndex - 1].style.display = "block";
-
-  console.log(slideIndex);
+  slideIndex = n;
+  if (n > slides.length - 1) {slideIndex = 0};
+  if (n < 0) {slideIndex = slides.length - 1};
+  showSlides();
 };
 
 gridItems.forEach(item => {
   item.addEventListener('click', activateModal);
 });
 
-prevButton.addEventListener('click', function() {plusSlides(slideIndex -= 1)});
-nextButton.addEventListener('click', function() {plusSlides(slideIndex += 1)});
+function showSlides() {
+ 
+  for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  // console.log(slides[slideIndex]);
+  slides[slideIndex].style.display = "block";
+
+  console.log(slideIndex);
+};
+
+
+
+prevButton.addEventListener('click', function() {changeSlide(slideIndex - 1)});
+nextButton.addEventListener('click', function() {changeSlide(slideIndex + 1)});
 
 window.addEventListener("click", function(event) {
   if (event.target.className == 'slide-container') {
