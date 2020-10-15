@@ -12,53 +12,104 @@ body {
   margin: 0;
 }
 
-a {
+a,
+a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 footer {
+  position: relative;
   color: black;
   width: 100%;
   text-align: center;
-  position: static;
-  bottom: 0;
-  margin-top: 100px;
-  
+  /* position: static; */
+  top: 200px;
+  margin-bottom: 20px;
+  /* margin-top: 100px; */
+  z-index: 2;
 }
 
 header {
-  position: fixed;
-  padding: 10vh 0px;
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 3vh 12vw;
+  height: 200px;
+  width: 100%;
   top: 0;
   text-align: center;
-  background-color: rgb(255, 255, 255, 0.2);
-  z-index: 0;
+  color: rgb(83, 67, 67);
+  z-index: 2;
+}
+
+header.horizontal {
+  /* padding: 0 12vw; */
+  position: fixed;
+  height: 60px;
+  padding: 10px 12vw;
+  vertical-align: middle;
+  flex-direction: row;
+  background-color: white;
+  justify-content: space-between;
+}
+
+header.horizontal .branding {
+ display: inline-block;
+ margin-top: 0;
+  font-size: 35px;
+}
+
+header.horizontal nav {
+  display: inline-block;
+  margin-top: -5px;
+  vertical-align: middle;
+  /* align-items: center; */
 }
 
 .splash {
   position: fixed;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   top: 0;
   background: url("https://images.pexels.com/photos/1416367/pexels-photo-1416367.jpeg?cs=srgb&dl=pexels-steve-johnson-1416367.jpg&fm=jpg")
     no-repeat center center fixed;
   background-size: cover;
+  z-index: -2;
+}
+
+.gallery-background {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  background: linear-gradient(173deg, rgba(255,255,255,1) 31%, rgba(255,255,255,0.7067869384081757) 61%, rgba(255,255,255,0.2995040252429097) 54%);
+  transition: 0.5s;
   z-index: -1;
 }
 
+.gallery-background.white {
+  background-color: white;
+  height: 140vh;
+}
+
 .branding {
+  display: block;
   font-family: 'Sarina', cursive;
   font-size: 50px;
 }
 
-.navbar {
+nav {
+  display: block;
   font-family: 'Averia Serif Libre', cursive;
   font-size: 17px;
   list-style: none;
   padding-inline-start: 0px;
   margin-top: -15px;
+}
+
+ul {
+padding-inline-start: 0px;
 }
 
 .navbar li {
@@ -67,13 +118,14 @@ header {
 }
 
 .navbar li a {
-  color: rgb(255, 255, 255, 0.8);
+  color: rgba(83, 67, 67, 0.719);
 }
 
 .navbar li a:hover,
 .navbar .current a {
-  color: rgb(255, 255, 255);
+  color: rgb(83, 67, 67);
 }
+
 
 /* Home Page Rulesets */
 
@@ -111,7 +163,9 @@ header {
 
 .grid {
   position: relative;
-  margin: 100vh 7vw 100px 7vw;
+  top: 0px;
+  /* top: 20px; */
+  margin: 0vh 7vw 100px 7vw;
   padding: 30px;
   line-height: 0;
   -webkit-column-count: 3;
@@ -162,7 +216,7 @@ header {
 .modal-content {
   height: 100%;
   width: 100%;
-  
+  transition: 1s;
 }
 
 .slide-container,
@@ -188,6 +242,7 @@ header {
   height: 100%;
   width: 8vw;
   text-align: center;
+  font-size: 25px;
   padding: 45vh 0;
   background-color: rgba(255, 255, 255, 0);
   transition: 0.15s ease;

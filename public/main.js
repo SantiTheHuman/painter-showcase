@@ -1,15 +1,23 @@
 // Home 
 
 const gridSection = document.getElementById("content");
-const galleryButton = document.getElementById("bring-gallery-up");
+const header = document.querySelector('header');
+const galleryBackground = document.querySelector('.gallery-background');
 
 
-function moveGalleryUp() {
-  document.header.style.color = 'black';
-};
 
-galleryButton.addEventListener('click', moveGalleryUp);
-
+window.addEventListener('scroll', function() {
+  let scrollFromTop = Math.floor(window.pageYOffset);
+  if (scrollFromTop < 165) {
+    galleryBackground.className = 'gallery-background';
+    header.classList.remove('horizontal');
+    gridSection.style.top = '0px';
+  } else {
+    galleryBackground.className = 'gallery-background white';
+    header.className = 'horizontal';
+    gridSection.style.top = '200px';
+  }
+});
 
 // Gallery
 
