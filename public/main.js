@@ -2,21 +2,23 @@
 
 const gridSection = document.getElementById("content");
 const header = document.querySelector('header');
-const galleryBackground = document.querySelector('.gallery-background');
+const splash = document.querySelector('.splash');
+const navbar = document.querySelector('nav')
+const navContainer = document.querySelector('.nav-container');
 
 
 
 window.addEventListener('scroll', function() {
-  let scrollFromTop = Math.floor(window.pageYOffset);
-  if (scrollFromTop < 165) {
-    galleryBackground.className = 'gallery-background';
-    header.classList.remove('horizontal');
-    gridSection.style.top = '0px';
-  } else {
-    galleryBackground.className = 'gallery-background white';
-    header.className = 'horizontal';
-    gridSection.style.top = '200px';
-  }
+  let splashOffset = splash.offsetTop;
+  let topOfNavbar = splashOffset - 60;
+
+  console.log(splashOffset, window.pageYOffset);
+
+  if (window.pageYOffset <= topOfNavbar) {
+      navContainer.className = 'nav-container';
+    } else {
+      navContainer.className = 'nav-container sticky';
+  };
 });
 
 // Gallery

@@ -31,43 +31,71 @@ footer {
 }
 
 header {
+  /* position: static; */
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 3vh 12vw;
-  height: 200px;
+  /* flex-direction: row; */
+  /* justify-content: flex-end; */
   width: 100%;
-  top: 0;
-  text-align: center;
+  height: 30vh;
+  /* margin-top: 100px; */
+  
+  align-items: flex-end;
+  /* text-align: center; */
+  justify-content: space-between;
   color: rgb(83, 67, 67);
   z-index: 2;
 }
 
-header.horizontal {
-  /* padding: 0 12vw; */
-  position: fixed;
-  height: 60px;
-  padding: 10px 12vw;
-  vertical-align: middle;
+.nav-container {
+  display: flex;
   flex-direction: row;
-  background-color: white;
   justify-content: space-between;
+  height: 60px;
+  width: 100%;
+  padding: 0px 50px 0px 50px;
+  top: 0;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 2;
+  
 }
 
-header.horizontal .branding {
- display: inline-block;
- margin-top: 0;
+.nav-container.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.branding {
+  display: flex;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  font-family: 'Sarina', cursive;
   font-size: 35px;
 }
 
-header.horizontal nav {
+nav {
+  /* position: absolute; */
+  /* bottom: 0; */
+  display: flex;
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 17px;
+  list-style: none;
+  height: 60px;
+  padding-inline-start: 0px;
+  /* padding-bottom: 0px; */
+  margin-bottom: -10px;
+  /* margin-top: -25px; */
+}
+
+/* header.horizontal nav {
   display: inline-block;
   margin-top: -5px;
   vertical-align: middle;
   /* align-items: center; */
-}
+/* } */
 
-.splash {
+/* .splash {
   position: fixed;
   height: 100vh;
   width: 100%;
@@ -76,11 +104,12 @@ header.horizontal nav {
     no-repeat center center fixed;
   background-size: cover;
   z-index: -2;
-}
-
+} */
+/* 
 .gallery-background {
   position: fixed;
   height: 100vh;
+  min-height: 500px;
   width: 100%;
   top: 0;
   background: linear-gradient(173deg, rgba(255,255,255,1) 31%, rgba(255,255,255,0.7067869384081757) 61%, rgba(255,255,255,0.2995040252429097) 54%);
@@ -91,30 +120,17 @@ header.horizontal nav {
 .gallery-background.white {
   background-color: white;
   height: 140vh;
-}
+} */
 
-.branding {
-  display: block;
-  font-family: 'Sarina', cursive;
-  font-size: 50px;
-}
-
-nav {
-  display: block;
-  font-family: 'Averia Serif Libre', cursive;
-  font-size: 17px;
-  list-style: none;
-  padding-inline-start: 0px;
-  margin-top: -15px;
-}
 
 ul {
 padding-inline-start: 0px;
+list-style: none;
 }
 
 .navbar li {
   display: inline-block;
-  padding: 0 5px;
+  padding: 0 15px;
 }
 
 .navbar li a {
@@ -126,47 +142,27 @@ padding-inline-start: 0px;
   color: rgb(83, 67, 67);
 }
 
-
-/* Home Page Rulesets */
-
-#introduction {
-  text-align: center;
-  margin-top: 15%;
-  margin-bottom: 50%;
+.splash {
+  width: 100%;
+  height: 65vh;
+  padding: 0px 35px;
+  /* overflow: hidden; */
+}
+.splash img {
+  width: 100%;
+  object-fit: cover;
+  /* overflow: hidden; */
 }
 
-#introduction h1 {
-  font-size: 60px;
-}
-
-#introduction p {
-  font-size: 18px;
-  margin: 10% auto;
-  font-weight: lighter;
-}
-
-#introduction a {
-  display: block;
-  background-color: cornflowerblue;
-  width: 20%;
-  padding: 3% 8%;
-  margin: 0 auto;
-  border-radius: 4px;
-  text-align: center;
-}
-
-#introduction a:hover {
-  background-color: rgb(83, 139, 243);
-}
 
 /* Gallery */
 
 .grid {
-  position: relative;
-  top: 0px;
+  /* position: relative; */
+  /* top: 0px; */
   /* top: 20px; */
-  margin: 0vh 7vw 100px 7vw;
-  padding: 30px;
+  /* margin: 100px 0vw 100px 0vw; */
+  padding: 40px 30px;
   line-height: 0;
   -webkit-column-count: 3;
   -webkit-column-gap: 0px;
@@ -188,12 +184,9 @@ padding-inline-start: 0px;
   page-break-inside: avoid; /* For Firefox. */
   -webkit-column-break-inside: avoid; /* For Chrome & friends. */
   break-inside: avoid; /* For standard browsers like IE. :-) */
-  
+  transition: 400ms ease-out;
 }
 @media (hover: hover) {
-  .grid img {
-    transition: 500ms;
-  }
   .grid img:hover {
     filter: brightness(110%);
   }
