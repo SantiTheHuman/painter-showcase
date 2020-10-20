@@ -50,11 +50,11 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   height: 60px;
   width: 100%;
   padding: 0px 50px 0px 50px;
   top: 0;
-  border: 1px solid black;
   background-color: white;
   z-index: 2;
   
@@ -68,7 +68,7 @@ header {
 
 .branding {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: 17px;
   margin-left: 10px;
   font-family: 'Sarina', cursive;
   font-size: 35px;
@@ -162,7 +162,7 @@ list-style: none;
   /* top: 0px; */
   /* top: 20px; */
   /* margin: 100px 0vw 100px 0vw; */
-  padding: 40px 30px;
+  padding: 30vh 30px;
   line-height: 0;
   -webkit-column-count: 3;
   -webkit-column-gap: 0px;
@@ -188,7 +188,9 @@ list-style: none;
 }
 @media (hover: hover) {
   .grid img:hover {
-    filter: brightness(110%);
+    filter: brightness(110%)
+    drop-shadow(0 0.30rem 0.35rem rgb(0, 0, 0, 0.3));
+    /* filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5)); */
   }
 }
 
