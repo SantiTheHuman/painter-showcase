@@ -8,18 +8,18 @@ const navContainer = document.querySelector('.nav-container');
 
 
 
-window.addEventListener('scroll', function() {
-  let splashOffset = splash.offsetTop;
-  let topOfNavbar = splashOffset - 60;
+// window.addEventListener('scroll', function() {
+//   let splashOffset = splash.offsetTop;
+//   let topOfNavbar = splashOffset - 60;
 
-  console.log(splashOffset, window.pageYOffset);
+//   console.log(splashOffset, window.pageYOffset);
 
-  if (window.pageYOffset <= topOfNavbar) {
-      navContainer.className = 'nav-container';
-    } else {
-      navContainer.className = 'nav-container sticky';
-  };
-});
+//   if (window.pageYOffset <= topOfNavbar) {
+//       navContainer.classList.remove('sticky');
+//     } else {
+//       navContainer.classList.add('sticky');
+//   };
+// });
 
 // Gallery
 
