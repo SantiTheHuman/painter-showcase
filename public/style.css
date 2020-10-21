@@ -7,7 +7,7 @@
 
 body {
   font-family: Helvetica, sans-serif;
-  color: white;
+  color: rgb(83, 67, 67);
   margin: 0;
 }
 
@@ -19,7 +19,7 @@ a:visited {
 
 footer {
   position: relative;
-  color: black;
+  /* color: black; */
   width: 100%;
   text-align: center;
   /* position: static; */
@@ -72,17 +72,13 @@ header {
 }
 
 nav {
-  /* position: absolute; */
-  /* bottom: 0; */
   display: flex;
   font-family: 'Averia Serif Libre', cursive;
   font-size: 17px;
   list-style: none;
   height: 60px;
   padding-inline-start: 0px;
-  /* padding-bottom: 0px; */
   margin-bottom: -10px;
-  /* margin-top: -25px; */
 }
 
 ul {
@@ -214,37 +210,68 @@ list-style: none;
 
 /* Blog Page Rulesets */
 
-.blog-container {
+/* .blog-container {
   width: 100%;
   background-color: rgb(255, 255, 255);
-}
+} */
 
-.blog-container h2 {
+/* .blog-container h2 {
   font-weight: normal;
-}
+} */
 
 .blog-post {
-  color: black;
-  width: 90%;
-  overflow: auto;
+  font-family: 'Averia Serif Libre', cursive;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
   background-color: rgb(255, 255, 255, 0.9);
-  padding: 2% 5%;
-  margin: 5% auto;
-  border-radius: 5px;
+  /* padding: 2% 5%; */
+  /* margin: 5% auto; */
+  /* border-radius: 5px; */
 }
 
 .blog-image {
   display: inline-block;
-  vertical-align: middle;
-  width: 32%;
-  min-width: 100px;
-  margin: 0 auto;
+  /* vertical-align: middle; */
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  /* margin: 0 auto; */
 }
 
-.description {
-  height: 100%;
-  font-size: 13px;
-  overflow: auto;
+.blog-image img {
+  width: 100%;
+}
+
+.blog-text {
+  padding: 0px 50px 0px 50px;
+  margin-bottom: 150px;
+}
+
+.blog-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 3px;
+}
+
+.blog-title span {
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.blog-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(83, 67, 67, 0.719);
+}
+
+.blog-content {
+  font-size: 1.12rem;
 }
 
 /* About Page Ruleset */

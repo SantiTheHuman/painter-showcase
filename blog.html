@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pintorx</title>
     <link rel="stylesheet" href="public/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Baloo+2&family=Sarina&display=swap" rel="stylesheet">
     <script src="node_modules\handlebars\dist\handlebars.min.js"></script>
     <script id="templateHB" type="text/x-handlebars-template">
       {{#each posts}}
         <article class="blog-post">
-          <img class="blog-image" src="{{this.image}}" alt={{this.alt}} />
+          <div class="blog-image"> 
+            <img src="{{this.image}}" alt={{this.alt}} />
+          </div>
           <section class="blog-text">
-            <h2 class="title">
-              {{this.title}}
-            </h2>
-            <p class="description">
+            <div class="blog-title">
+             <h2>{{this.title}}</h2>
+             <span>{{this.date}}</span>
+            </div>
+            <div class="blog-line"></div>
+            <p class="blog-content">
               {{this.text}}
             </p>
           </section>
@@ -24,17 +29,17 @@
   </head>
   <body>
     <header>
-      <h1 class="branding">Pintorx</h1>
-
+      <div class="nav-container">
+      <h1 class="branding"><a href="index.html">Pintorx</a></h1>
       <nav>
         <ul class="navbar">
           <li><a href="index.html">Galería</a></li>
           <li class="current"><a href="blog.html">Blog</a></li>
           <li><a href="about.html">Historia</a></li>
-          <li><a href="contact.html">Contacto</a></li>
+          <li><a href="contact.html">	&#9993</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
     </header>
     
     <section id="content" class="container"></section>
