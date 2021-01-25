@@ -7,6 +7,8 @@
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
   },
   "dependencies": {
+    "core-js": "^2.6.5",
+    "gatsby": "^2.20.25",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-react-helmet": "^3.2.4",
     "gatsby-plugin-sharp": "^2.5.6",
@@ -26,7 +28,6 @@
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.19.0",
-    "gatsby": "^2.20.25",
     "gh-pages": "^2.2.0",
     "inquirer": "^7.1.0",
     "prettier": "^2.0.4",
