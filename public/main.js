@@ -30,7 +30,7 @@ const context = {
       image:
         "https://s3.amazonaws.com/codecademy-content/courses/learn-handlebars/musicon/electronic-keyboard.png",
       alt: "Pintando",
-      title: "Electronic Keyboard",
+      title: "Pianists celebrate the compact form factor and the diversity of synthesized rhythms.",
       text:
         "A piano welcomed to the 21th century. Pianists celebrate the compact form factor and the diversity of synthesized rhythms all in one masterful musical machine.",
     },
