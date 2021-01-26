@@ -36,6 +36,7 @@ class RootIndex extends React.Component {
     console.log(images)
     return (
       <Layout location={this.props.location}>
+        thinggggggggggggggggg
         <div style={{ background: '#fff' }}>
           <Hero />
           <Helmet title={siteTitle} />
@@ -73,7 +74,9 @@ class RootIndex extends React.Component {
                   className="grid-item"
                   key={index}
                 >
-                  <Img src={node.archivoDeImagen.fluid.src} alt={node.titulo} />
+                  {node.anyo}
+                  heloo
+                  <img src={node.archivoDeImagen.fluid.src} alt={node.titulo} />
                 </div>
               )
             })}
@@ -99,7 +102,7 @@ export const pageQuery = graphql`
           coleccion
           titulo
           archivoDeImagen {
-            fluid(maxWidth: 180, maxHeight: 180, resizingBehavior: SCALE) {
+            fluid(resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
