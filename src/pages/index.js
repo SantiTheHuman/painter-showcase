@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
@@ -72,7 +73,7 @@ class RootIndex extends React.Component {
                   className="grid-item"
                   key={index}
                 >
-                  <img src={node.archivoDeImagen.fluid.src} alt={node.titulo} />
+                  <Img src={node.archivoDeImagen.fluid.src} alt={node.titulo} />
                 </div>
               )
             })}
@@ -98,7 +99,7 @@ export const pageQuery = graphql`
           coleccion
           titulo
           archivoDeImagen {
-            fluid(resizingBehavior: SCALE) {
+            fluid(maxWidth: 180, maxHeight: 180, resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
