@@ -19,9 +19,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
+    "react-image-lightbox": "^5.1.1",
     "sharp": "^0.25.2"
   },
   "devDependencies": {
+    "gatsby": "^2.20.25",
     "babel-eslint": "^10.1.0",
     "chalk": "^4.0.0",
     "contentful-import": "^7.7.8",

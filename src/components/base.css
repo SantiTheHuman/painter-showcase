@@ -1,72 +1,416 @@
-@font-face {
-  font-family: "Avenir";
-  font-weight: 400;
-  font-style: normal;
-  src: url("/avenir-400.woff2") format("woff2");
-  font-display: swap;
+/* General Rulesets */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
-  font-size: 1em;
-  line-height: 1.65;
-  color: #373F49;
-  background: #eee;
+  font-family: 'Averia Serif Libre', cursive;
+  color: rgb(83, 67, 67);
   margin: 0;
 }
 
-img {
-  display: block;
-  width: 100%;
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
-h1,
-h2,
-h3 {
-  font-size: 2em;
+footer {
+  position: relative;
+  /* color: black; */
+  width: 100%;
+  text-align: center;
+  /* position: static; */
+  top: 200px;
+  margin-bottom: 20px;
+  /* margin-top: 100px; */
+  z-index: 2;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 30vh;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: rgb(83, 67, 67);
+  z-index: 2;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 0px 50px 0px 50px;
+  top: 0;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-container.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.about-nav {
+  color: white;
+  background-color: transparent;
+}
+
+.branding {
+  display: flex;
+  margin-bottom: 17px;
+  margin-left: 10px;
+  font-family: 'Sarina', cursive;
+  font-size: 35px;
+}
+
+nav {
+  display: flex;
+  font-size: 17px;
+  list-style: none;
+  height: 60px;
+  padding-inline-start: 0px;
+  margin-bottom: -10px;
+}
+
+ul {
+  padding-inline-start: 0px;
+  list-style: none;
+}
+
+.navbar li {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.navbar li a {
+  color: rgba(83, 67, 67, 0.719);
+}
+
+.navbar li a:hover,
+.navbar .current a {
+  color: rgb(83, 67, 67);
+}
+
+.splash {
+  width: 100%;
+  height: 70vh;
+  padding: 0px;
+  overflow: hidden;
+}
+.splash img {
+  width: 100%;
+  object-fit: cover;
+  /* overflow: hidden; */
+}
+
+/* Gallery */
+
+.collection-label {
+  position: relative;
+  bottom: -170px;
+  width: 100%;
+  /* height: 100px; */
+  text-align: center;
+  background-color: white;
+}
+
+.collection-label h2 {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-bottom: 0.43em;
   font-weight: normal;
 }
 
-a {
-  color: currentColor;
+.collection-line {
+  height: 2px;
+  margin: auto 50px;
+  background-color: rgb(83, 67, 67);
 }
 
-.wrapper {
-  width: calc(100% - 10vmin);
-  margin: 0 auto;
-  padding: 5vmin 0;
+.grid {
+  padding: 200px 5px;
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 0px;
+  column-count: 3;
+  column-gap: 0px;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
 }
-
-/**
- * article grid
- */
-.article-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 5vmin;
-}
-
-/**
- *
- */
-.section-headline {
-  padding: 0 0 0.4em 0;
-  margin: 0 0 5vmin 0;
-  border-bottom: 1px solid #ddd;
-}
-
-/**
- *
- */
-.list-inline {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.list-inline li {
+.grid-item {
+  cursor: pointer;
   display: inline-block;
+  padding: 5px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+.grid img {
+  width: 100%;
+  height: auto;
+  page-break-inside: avoid; /* For Firefox. */
+  -webkit-column-break-inside: avoid; /* For Chrome & friends. */
+  break-inside: avoid; /* For standard browsers like IE. :-) */
+  transition: 400ms ease-out;
+}
+@media (hover: hover) {
+  .grid img:hover {
+    filter: brightness(110%) drop-shadow(0 0.3rem 0.35rem rgb(0, 0, 0, 0.3));
+  }
+}
+
+/* Modal slideshow */
+
+.modal {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  /* overflow: auto; */
+}
+
+.custom-lightbox-wrapper {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  /* margin: 100px; */
+}
+
+.ril-toolbar {
+  background-color: transparent !important;
+  z-index: 0;
+}
+
+.ril__toolbarItemChild {
+  filter: invert(0.7);
+}
+
+.modal-content {
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+}
+
+.slide-container,
+.slide-container img {
+  height: 100%;
+  max-width: 100%;
+}
+
+.slide-container img {
+  display: block;
+  margin: auto;
+  padding: 5vh 0;
+  filter: drop-shadow(0 0 0.75rem rgb(0, 0, 0, 0.5));
+  /* z-index: 2; */
+}
+
+#prev,
+#next {
+  color: rgba(156, 156, 156, 0.5);
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  height: 100%;
+  width: 8vw;
+  text-align: center;
+  font-size: 25px;
+  padding: 45vh 0;
+  background-color: rgba(255, 255, 255, 0);
+  transition: 0.15s ease;
+  user-select: none;
+}
+
+#next {
+  right: 0;
+}
+
+#prev:hover,
+#next:hover {
+  color: rgb(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Blog Page Rulesets */
+
+.blog-post {
+  font-family: 'Averia Serif Libre', cursive;
+  position: relative;
+  top: -30vh;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgb(255, 255, 255, 0.9);
+}
+
+.blog-image {
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  /* margin: 0 auto; */
+}
+
+.blog-image img {
+  width: 100%;
+}
+
+.blog-text {
+  padding: 0px 50px 0px 50px;
+  margin-bottom: 150px;
+}
+
+.blog-title {
+  color: white;
+  position: absolute;
+  left: 0px;
+  bottom: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 55px;
+}
+
+.blog-title h2 {
+  font-size: 3.5em;
+  font-weight: normal;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.blog-title span {
+  font-size: 1.5em;
+  font-weight: normal;
+  /* margin-block-start: 0.83em; */
+  margin-block-end: 0.3em;
+  margin-inline-start: 60px;
+  margin-inline-end: 0px;
+}
+
+.blog-line {
+  position: relative;
+  top: -30px;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+
+.blog-title-bg {
+  position: absolute;
+  top: 50vh;
+  width: 100%;
+  height: 50vh;
+  background: -moz-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.42947601403842783) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: -webkit-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.42947601403842783) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.42947601403842783) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#ffffff",GradientType=1);
+}
+
+.blog-content {
+  font-size: 1.12rem;
+  position: relative;
+  top: 10px;
+}
+
+/* About Page Ruleset */
+
+.about-nav li a {
+  color: rgba(233, 231, 231, 0.719);
+}
+
+.about-nav li a:hover,
+.about-nav .current a {
+  color: rgb(255, 255, 255);
+}
+
+.about-background {
+  position: relative;
+  top: -30vh;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  margin-bottom: -100vh;
+  background-image: url('https://images.pexels.com/photos/374054/pexels-photo-374054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.about-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.about-text {
+  width: 600px;
+  margin: 80vh auto 0px auto;
+  padding: 0px 35px;
+  color: black;
+}
+
+/* Contact Page Ruleset */
+
+.contact-background {
+  position: relative;
+  top: -30vh;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  margin-bottom: -100vh;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/50/Vista_de_Valencia_desde_la_calle_Gasc%C3%B3_Oliag%2C_6%2C_de_Valencia_28.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+#connection {
+  color: black;
+  width: 100%;
+  margin: 15% auto;
+  text-align: center;
+}
+
+.contact {
+  width: 100%;
+  margin: 10% auto;
+}
+
+.contact p,
+.contact ul {
+  margin: 1%;
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+#location {
+  padding: 0;
+  list-style: none;
 }

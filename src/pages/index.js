@@ -4,30 +4,78 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
+import Lightbox from 'react-image-lightbox'
+import 'react-image-lightbox/style.css'
 
 class RootIndex extends React.Component {
-  render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-    const [author] = get(this, 'props.data.allContentfulPerson.edges')
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      photoIndex: 0,
+      isOpen: false,
+    }
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick(index) {
+    this.setState({ photoIndex: index, isOpen: true }, function () {
+      console.log(this.state)
+    })
+  }
+
+  render() {
+    const { photoIndex, isOpen } = this.state
+
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const imagenes = get(this, 'props.data.allContentfulImagen.edges')
+    const images = imagenes.map((image) => {
+      return image.node.archivoDeImagen.fluid.src
+    })
+    console.log(images)
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
+          <Hero />
           <Helmet title={siteTitle} />
-          <Hero data={author.node} />
-          <div className="wrapper">
-            <h2 className="section-headline">Recent articles</h2>
-            <ul className="article-list">
-              {posts.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
-            </ul>
+          <button type="button" onClick={() => this.setState({ isOpen: true })}>
+            Open Lightbox
+          </button>
+
+          {isOpen && (
+            <Lightbox
+              wrapperClassName="custom-lightbox-wrapper"
+              mainSrc={images[photoIndex]}
+              nextSrc={images[(photoIndex + 1) % images.length]}
+              prevSrc={images[(photoIndex + images.length - 1) % images.length]}
+              onCloseRequest={() => this.setState({ isOpen: false })}
+              onMovePrevRequest={() =>
+                this.setState({
+                  photoIndex: (photoIndex + images.length - 1) % images.length,
+                })
+              }
+              onMoveNextRequest={() =>
+                this.setState({
+                  photoIndex: (photoIndex + 1) % images.length,
+                })
+              }
+            />
+          )}
+          <div id="content" className="grid">
+            {imagenes.map(({ node }, index) => {
+              return (
+                <div
+                  onClick={() => {
+                    this.handleClick(index)
+                  }}
+                  data-index={index}
+                  className="grid-item"
+                  key={index}
+                >
+                  <img src={node.archivoDeImagen.fluid.src} alt={node.titulo} />
+                </div>
+              )
+            })}
           </div>
         </div>
       </Layout>
@@ -44,46 +92,17 @@ export const pageQuery = graphql`
         title
       }
     }
-    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+    allContentfulImagen(sort: { fields: [anyo], order: DESC }) {
       edges {
         node {
-          title
-          slug
-          publishDate(formatString: "MMMM Do, YYYY")
-          tags
-          heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+          coleccion
+          titulo
+          archivoDeImagen {
+            fluid(resizingBehavior: SCALE) {
               ...GatsbyContentfulFluid_tracedSVG
             }
           }
-          description {
-            childMarkdownRemark {
-              html
-            }
-          }
-        }
-      }
-    }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
-    ) {
-      edges {
-        node {
-          name
-          shortBio {
-            shortBio
-          }
-          title
-          heroImage: image {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
-            ) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
+          anyo
         }
       }
     }
