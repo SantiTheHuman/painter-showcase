@@ -3,44 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pintorx</title>
+    <title>Tana</title>
     <link rel="stylesheet" href="public/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Baloo+2&family=Sarina&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Baloo+2&family=Sarina&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
       <div class="nav-container">
-      <h1 class="branding"><a href="index.html">Pintorx</a></h1>
-      <nav>
-        <ul class="navbar">
-          <li class="current"><a href="index.html">Galería</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="about.html">Historia</a></li>
-          <li><a href="contact.html">	&#9993</a></li>
-        </ul>
-      </nav>
-    </div>
+        <h1 class="branding"><a href="index.html">Tana</a></h1>
+        <nav>
+          <ul class="navbar">
+            <li class="current"><a href="index.html">Galería</a></li>
+            <li><a href="about.html">Historia</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    
+
     <div class="splash">
-      <img src="https://images.pexels.com/photos/1416367/pexels-photo-1416367.jpeg?cs=srgb&dl=pexels-steve-johnson-1416367.jpg&fm=jpg" alt="">
+      <img
+        src="https://images.pexels.com/photos/1416367/pexels-photo-1416367.jpeg?cs=srgb&dl=pexels-steve-johnson-1416367.jpg&fm=jpg"
+        alt=""
+      />
     </div>
     <div class="collection-label">
       <h2 class="collection-title">Colección Número 1</h2>
       <div class="collection-line"></div>
     </div>
-    
+
     <div id="content" class="grid"></div>
 
     <div id="myModal" class="modal">
       <div id="modal-pictures" class="modal-content"></div>
       <div id="prev">&#10094;</div>
       <div id="next">&#10095;</div>
-      
     </div>
 
     <footer><p>&copy; Pintorx</p></footer>
-    
+
     <script src="node_modules\handlebars\dist\handlebars.min.js"></script>
     <script id="templateHB" type="x-handlebars-template">
       {{#each paintings}}
@@ -54,6 +58,8 @@
     <script src="https://npmcdn.com/imagesloaded@4/imagesloaded.pkgd.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="./public/main.js"></script>
-    
+    <!-- <script src="node_modules\g-sheets-api\build\index.js"></script> -->
+    <script src="bundle.js"></script>
+    <script src="./public/images.js"></script>
   </body>
 </html>
