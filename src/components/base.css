@@ -24,98 +24,17 @@ footer {
   text-align: center;
   /* position: static; */
   top: 200px;
-  margin-bottom: 20px;
+  padding-bottom: 1px;
+  /* margin-bottom: 20px; */
   /* margin-top: 100px; */
   z-index: 2;
-}
-
-header {
-  display: flex;
-  width: 100%;
-  height: 30vh;
-  align-items: flex-start;
-  justify-content: space-between;
-  color: rgb(83, 67, 67);
-  z-index: 2;
-}
-
-.nav-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  width: 100%;
-  padding: 0px 50px 0px 50px;
-  top: 0;
-  background-color: white;
-  z-index: 2;
-}
-
-.nav-container.sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.about-nav {
-  color: white;
-  background-color: transparent;
-}
-
-.branding {
-  display: flex;
-  margin-bottom: 17px;
-  margin-left: 10px;
-  font-family: 'Sarina', cursive;
-  font-size: 35px;
-}
-
-nav {
-  display: flex;
-  font-size: 17px;
-  list-style: none;
-  height: 60px;
-  padding-inline-start: 0px;
-  margin-bottom: -10px;
-}
-
-ul {
-  padding-inline-start: 0px;
-  list-style: none;
-}
-
-.navbar li {
-  display: inline-block;
-  padding: 0 15px;
-}
-
-.navbar li a {
-  color: rgba(83, 67, 67, 0.719);
-}
-
-.navbar li a:hover,
-.navbar .current a {
-  color: rgb(83, 67, 67);
-}
-
-.splash {
-  width: 100%;
-  height: 70vh;
-  padding: 0px;
-  overflow: hidden;
-}
-.splash img {
-  width: 100%;
-  object-fit: cover;
-  /* overflow: hidden; */
 }
 
 /* Gallery */
 
 .collection-label {
-  position: relative;
-  bottom: -170px;
+  /* position: relative; */
+  /* bottom: -170px; */
   width: 100%;
   /* height: 100px; */
   text-align: center;
@@ -131,12 +50,13 @@ ul {
 
 .collection-line {
   height: 2px;
-  margin: auto 50px;
-  background-color: rgb(83, 67, 67);
+  margin: auto 10%;
+  background-color: rgba(83, 67, 67, 0.719);
+  border-radius: 50px;
 }
 
 .grid {
-  padding: 200px 5px;
+  padding: 5px;
   line-height: 0;
   -webkit-column-count: 3;
   -webkit-column-gap: 0px;
@@ -348,19 +268,6 @@ ul {
   color: rgb(255, 255, 255);
 }
 
-.about-background {
-  position: relative;
-  top: -30vh;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  margin-bottom: -100vh;
-  background-image: url('https://images.pexels.com/photos/374054/pexels-photo-374054.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-  background-size: cover;
-  background-position: center;
-  z-index: -2;
-}
-
 .about-container {
   display: block;
   width: 100%;
@@ -377,40 +284,64 @@ ul {
 }
 
 /* Contact Page Ruleset */
-
-.contact-background {
+.contact-container {
   position: relative;
-  top: -30vh;
-  left: 0;
-  height: 100vh;
+  /* top: -30vh; */
   width: 100%;
-  margin-bottom: -100vh;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/50/Vista_de_Valencia_desde_la_calle_Gasc%C3%B3_Oliag%2C_6%2C_de_Valencia_28.jpg');
-  background-size: cover;
+  height: fit-content;
+  padding: 100px;
+  /* margin-bottom: -30vh; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/vista-de-valencia.jpg');
   background-position: center;
-  z-index: -2;
+  background-size: cover;
 }
 
-#connection {
-  color: black;
-  width: 100%;
-  margin: 15% auto;
+.contact-window {
+  width: 30%;
+  margin: 30vh auto 10vh auto;
   text-align: center;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  background-color: white;
 }
 
-.contact {
-  width: 100%;
-  margin: 10% auto;
-}
-
-.contact p,
-.contact ul {
-  margin: 1%;
+.contact-window p {
+  padding: 20px;
   font-size: 16px;
   font-weight: lighter;
 }
 
-#location {
-  padding: 0;
-  list-style: none;
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  /* align-items: left;
+  justify-content: flex-start; */
+}
+
+.contact-form label {
+  display: flex;
+  padding: 5px;
+}
+
+.contact-form span {
+  flex: 1;
+  text-align: left;
+}
+
+.contact-form input {
+  flex: 2;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.contact-form textarea {
+  flex: 2;
+  border: 1px solid black;
+  border-radius: 3px;
 }

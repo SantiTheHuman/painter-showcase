@@ -23,13 +23,14 @@
     "sharp": "^0.25.2"
   },
   "devDependencies": {
-    "gatsby": "^2.20.25",
     "babel-eslint": "^10.1.0",
     "chalk": "^4.0.0",
     "contentful-import": "^7.7.8",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.19.0",
+    "g-sheets-api": "^1.4.1",
+    "gatsby": "^2.20.25",
     "gh-pages": "^2.2.0",
     "inquirer": "^7.1.0",
     "prettier": "^2.0.4",

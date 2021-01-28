@@ -4,22 +4,32 @@ import styles from './navigation.module.css'
 
 export default () => (
   <header>
-    <div class="nav-container">
-      <h1 class="branding">
+    <div className={styles.navContainer}>
+      <h1 className={styles.title}>
         <a href="index.html">Tana</a>
       </h1>
-      <nav>
-        <ul class="navbar">
-          <li class="current">
-            <a href="index.html">Galería</a>
-          </li>
-          <li>
-            <a href="about.html">Historia</a>
-          </li>
-          <li>
-            <a href="contact.html">Contacto</a>
-          </li>
-        </ul>
+      <nav role="navigation" className={styles.navigation}>
+        <Link
+          className={styles.navigationItem}
+          activeClassName={styles.current}
+          to="/"
+        >
+          Galería
+        </Link>
+        <Link
+          className={styles.navigationItem}
+          activeClassName={styles.current}
+          to="/historia"
+        >
+          Historia
+        </Link>
+        <Link
+          className={styles.navigationItem}
+          activeClassName={styles.current}
+          to="/contacto"
+        >
+          Contacto
+        </Link>
       </nav>
     </div>
   </header>
