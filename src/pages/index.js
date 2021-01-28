@@ -18,7 +18,7 @@ class RootIndex extends React.Component {
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
-        <HeroImage src="..\..\almendro1.jpg" />
+        <HeroImage src="..\..\almendro1.jpg" height="100vh" />
         <ImageCollection collection="Pai pais" />
         <footer>
           <p>&copy; 2021 Tana</p>

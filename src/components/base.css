@@ -277,10 +277,21 @@ footer {
 }
 
 .about-text {
-  width: 600px;
-  margin: 80vh auto 0px auto;
-  padding: 0px 35px;
-  color: black;
+  position: relative;
+  top: -90vh;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: -90vh;
+  padding: 35px;
+  color: rgb(48, 37, 37);
+  background-color: rgba(255, 255, 255, 0.658);
+}
+
+.press-quote {
+  font-size: 40px;
+  margin-bottom: 30px;
+  /* width: 150%; */
+  word-wrap: none;
 }
 
 /* Contact Page Ruleset */
@@ -302,7 +313,7 @@ footer {
 }
 
 .contact-window {
-  width: 30%;
+  width: 40%;
   margin: 30vh auto 10vh auto;
   text-align: center;
   /* border: 1px solid black; */
@@ -335,13 +346,32 @@ footer {
 }
 
 .contact-form input {
+  font-family: 'Averia Serif Libre', cursive;
+  color: rgba(83, 67, 67);
   flex: 2;
-  border: 1px solid black;
+  border: 1px solid rgba(83, 67, 67, 0.719);
   border-radius: 3px;
 }
 
 .contact-form textarea {
+  font-family: 'Averia Serif Libre', cursive;
+  color: rgba(83, 67, 67);
   flex: 2;
-  border: 1px solid black;
+  border: 1px solid rgba(83, 67, 67, 0.719);
   border-radius: 3px;
+}
+
+.contact-form button {
+  font-family: 'Averia Serif Libre', cursive;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  background-color: rgba(83, 67, 67, 0.719);
+}
+
+.contact-form button:hover {
+  cursor: pointer;
+  background-color: rgba(83, 67, 67);
 }

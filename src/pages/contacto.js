@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import { Helmet } from 'react-helmet'
 import Layout from '../components/layout'
 // import HeroImage from '../components/HeroImage'
 import emailIcon from '../../static/email-icon.svg'
 
 export default function contacto(props) {
+  // const [success, setSuccess] = useState(false)
+
+  // const toggleSuccess = (e) => {
+  //   e.preventDefault()
+  //   setSuccess(true)
+  // }
+
+  // useEffect(() => {
+  //   setSuccess(false)
+  // }, [])
+
   return (
     <Layout location={props.location}>
       {/* <HeroImage src="..\..\vista-de-valencia.jpg" opacity="0.8" /> */}
@@ -16,10 +27,12 @@ export default function contacto(props) {
           <p>
             Para cualquir pregunta o sugerencia, no dude en enviarme un mensaje.
           </p>
-          <img src={emailIcon} alt="email icon" style={{ color: 'blue' }} />
+          <img src={emailIcon} alt="email icon" />
 
           <form
             className="contact-form"
+            // onSubmit={() => toggleSuccess()}
+            // action="/contacto"
             method="post"
             netlify-honeypot="bot-field"
             data-netlify="true"
