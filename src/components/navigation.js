@@ -7,11 +7,11 @@ export default () => (
     {/* <div className={styles.navContainer}> */}
     <nav role="navigation" className={styles.navigation}>
       <Link
-        className={styles.current}
+        className={styles.title}
         // activeClassName={styles.current}
         to="/"
       >
-        <h1 className={styles.title}>Tana</h1>
+        <h1>Tana</h1>
       </Link>
       <Link
         className={styles.navigationItem}

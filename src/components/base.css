@@ -19,24 +19,18 @@ a:visited {
 
 footer {
   position: relative;
-  /* color: black; */
   width: 100%;
   text-align: center;
-  /* position: static; */
   top: 200px;
   padding-bottom: 1px;
-  /* margin-bottom: 20px; */
-  /* margin-top: 100px; */
   z-index: 2;
 }
 
 /* Gallery */
 
 .collection-label {
-  /* position: relative; */
-  /* bottom: -170px; */
+  margin-top: 100px;
   width: 100%;
-  /* height: 100px; */
   text-align: center;
   background-color: white;
 }
@@ -86,6 +80,35 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .grid {
+    -webkit-column-count: 2;
+    -webkit-column-gap: 0px;
+    column-count: 2;
+    column-gap: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0px;
+    column-count: 1;
+    column-gap: 0px;
+  }
+}
+
+.expand-button {
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: right;
+  padding: 40px 20px;
+  color: rgba(83, 67, 67, 0.719);
+}
+
+.expand-button:hover {
+  color: rgb(83, 67, 67);
+}
 /* Modal slideshow */
 
 .modal {
@@ -278,13 +301,21 @@ footer {
 
 .about-text {
   position: relative;
-  top: -90vh;
+  margin: -40% auto;
   max-width: 500px;
-  margin: auto;
-  margin-bottom: -90vh;
   padding: 35px;
   color: rgb(48, 37, 37);
   background-color: rgba(255, 255, 255, 0.658);
+}
+
+@media (max-width: 1000px) {
+  /* .about-text {
+    top: -20vh;
+    padding: 25px;
+  }
+  footer {
+    top: 19vh;
+  } */
 }
 
 .press-quote {
@@ -307,7 +338,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url('/vista-de-valencia.jpg');
+  background-image: url('https://lh3.googleusercontent.com/v47I8fKNOZPwVKxvgka3rR9VHSCpIMlJ3N0ihxgMg161WrJK2EljQ4nsGWp_WZP1IYw-PcclpD7ZbmJKmsaNCUCHduYuf6RF2me6a_xVIElGeLYmjW2mADgwdS6si8aA0d6U8C_STRDq-K_dayBFLPHhchd3H3F-Zh3TjRWDtiAZoKEwpXaKqNeapCCdbvxNte5ZkseKTH4Z070rScHqXl5SZhlb9vK0KlK8UwDItX7m2OkxbRo6iFgRCKfLp7VZ1_e0tbp5y7pJ2fbgPxv6961kENNkUXOUPpSEwb4PIToyv04rj-6vGL3RGXu8cy6ai4gxscXCZrme7YXwKroZJKVWwVNxy9kGQSTlZ6EVwBeT1XV05w01PZqmr_CdwkRoRQdAccXO0BHm5bOIJuIjbFUjZoXeZmDZm-kYYszH89vOV63Kozcaf9-I4Ix3hID7KbQfRxkvXFhHNZVNXiSeBg3Qs3jsJ38pEIi-dibigiX45D4pyXwC3KHzhzzOarDbk9nKfs2XeGcUwDi8nIArMMETgve8YsN8o0mlLE00uphwAMV0F4JfaljFGwfrUISLBGaZGcVpQTVMIFN53oBMHaDs-T1_aYsfM-fGmH3UWkORDW2XQ_LC5Y5cffR_rgq7W8yReD_Cy-8glBL3ahb9GDQn_XhpbrXqijbZ78xFaWW4Fb24guM7tWGkIUQfB6U=w1322-h972-no?authuser=0');
   background-position: center;
   background-size: cover;
 }
@@ -319,6 +350,27 @@ footer {
   /* border: 1px solid black; */
   border-radius: 5px;
   background-color: white;
+}
+
+@media (max-width: 1000px) {
+  .contact-window {
+    width: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .contact-window {
+    width: 80%;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-container {
+    padding: 100px 5px;
+  }
+  .contact-window {
+    width: 97%;
+  }
 }
 
 .contact-window p {

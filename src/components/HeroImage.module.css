@@ -11,15 +11,17 @@
   /* top: -30vh; */
   left: 0;
   /* height: 100vh; */
+  min-height: 600px;
   width: 100%;
-  margin-bottom: 20vh;
-  filter: brightness(1.2);
+  /* margin-bottom: 20vh; */
+  /* filter: brightness(1.2); */
   overflow: hidden;
   z-index: 0;
 }
 .HeroImage img {
   height: 100%;
   width: 100%;
+  min-height: 600px;
   object-fit: cover;
   object-position: 100% 40%;
   /* opacity: 0.8; */

@@ -6,6 +6,7 @@ export default function ImageCollection({ collection }) {
   const [images, setImages] = useState([])
   const [photoIndex, setPhotoIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
+  const [expandCollection, setExpandCollection] = useState(null)
 
   const options = {
     sheetId: '11jnjmKkUza3xEujPEhzXCkXX6taZysd8uCbylYTbpV8',
@@ -34,6 +35,7 @@ export default function ImageCollection({ collection }) {
         console.log(error)
       }
     )
+    setExpandCollection(null)
   }, [])
 
   const handleClick = (index) => {
@@ -45,7 +47,7 @@ export default function ImageCollection({ collection }) {
   return (
     <>
       <div className="collection-label">
-        <h2 className="collection-title">Paciencias</h2>
+        <h2 className="collection-title">{collection}</h2>
         <div className="collection-line"></div>
       </div>
       {isOpen && (
@@ -78,21 +80,35 @@ export default function ImageCollection({ collection }) {
         />
       )}
       <div id="content" className="grid">
-        {images &&
-          images.map((image, index) => {
-            return (
-              <div
-                onClick={() => {
-                  handleClick(index)
-                }}
-                data-index={index}
-                className="grid-item"
-                key={index}
-              >
-                <img src={image.Enlace} />
-              </div>
-            )
-          })}
+        {images.map((image, index) => {
+          let imageStyle
+          if (index > 2 && expandCollection !== collection) {
+            imageStyle = { display: 'none' }
+          } else if (index > 2 && expandCollection === collection) {
+            imageStyle = { display: 'block' }
+          } else if (index < 2) {
+            imageStyle = { display: 'block' }
+          }
+          return (
+            <div
+              onClick={() => {
+                handleClick(index)
+              }}
+              data-index={index}
+              className="grid-item"
+              key={index}
+              style={imageStyle}
+            >
+              <img src={image.Enlace} />
+            </div>
+          )
+        })}
+        <p
+          className="expand-button"
+          onClick={() => setExpandCollection(collection)}
+        >
+          Expandir colección
+        </p>
       </div>
     </>
   )
