@@ -13,48 +13,49 @@ export default function historia(props) {
 
       <section className="about-text">
         <p>
-          La principal ocupación del pintor es la distribución uniforme de
-          pintura por las superficies a decorar utilizando herramientas tales
-          como brochas o rodillos. El pintor es contratado por los constructores
-          o dueños de las viviendas para dar color y protección a sus paredes y
-          techos de acuerdo a sus gustos y al diseño de la vivienda.
+          TANA (Encarna García) nació en La Mancha, en Peñas de San Pedro
+          (Albacete) aunque desde los nueve años vive en Valencia. Estudió
+          Magisterio y Derecho y la docencia ha sido su profesión en todos los
+          niveles académicos, desde una escuela unitaria en Venta del Moro,
+          pasando por diversos Institutos de Enseñanza Media, hasta la Facultad
+          de Derecho de Valencia.{' '}
         </p>
         <img
           src="..\..\pintando.jpg"
           style={{ width: '100%', height: '200px', objectFit: 'cover' }}
         />
-
         <p>
-          Entre sus funciones se encuentran el rascado de las paredes para
-          retirar la pintura antigua o el papel pintado antes de aplicar la
-          nueva. Para ello, utiliza decapantes, agua y espátulas. Lija las
-          superficies para alisarlas utilizando papel de lija o cepillos de
-          metal. Rellena los orificios dejados por las escarpias y otras
-          imperfecciones utilizando masilla o escayola y aplicándola con la
-          espátula de masillar.
-        </p>
+          Si la docencia ha sido su profesión, la pintura y la música han sido
+          su fascinación. Comenzó a pintar una vez liberada de sus compromisos
+          laborales y es completamente AUTODIDACTA. La Mancha y el Mediterráneo
+          son los pilares de su inspiración. Empezó a pintar para sí misma,
+          animada siempre por su marido (su mayor admirador) y sólo su familia y
+          amigos vieron sus obras en algunas ocasiones. Sólo una apuesta (que
+          perdió) con su primo M, la llevó a exponer su obra al público. En esa
+          ocasión se dijo de ella:
+        </p>{' '}
         <p className="press-quote">
-          "El pintor utiliza diferentes tipos de pintura según las
-          características de la habitación, el tipo de superficie y el resultado
-          buscado."
+          "La pintura de Tana es vital y sin artificios : una vuelta a la vieja
+          escuela del trazo agradable, del halago a la naturaleza, que vibra en
+          los óleos y los pasteles...las flores presentan vivos colores, el
+          cielo muestra toda su pureza azul, las hojas tienen un tacto casi
+          palpable. Una pintura vitalista y hermosa en la que vale la pena
+          recrearse"
         </p>
         <img src="..\..\prensa-torrevieja.jpg" style={{ maxWidth: '100%' }} />
         <p>
-          El pintor utiliza diferentes tipos de pintura según las
-          características de la habitación, el tipo de superficie y el resultado
-          buscado. Así, emplea pintura metálica para cubrir tuberías y
-          recipientes metálicos, esmalte para los radiadores o pintura acrílica
-          para las zonas húmedas o afectadas por la grasa. Además, aplica
-          barnices sobre las superficies de madera para protegerlas de la
-          humedad y el deterioro.
+          A Tana le gusta especialmente la pintura que despierta sensaciones
+          placenteras y prefiere la naturaleza como tema de sus obras. No
+          obstante, desde hace algún tiempo, trabaja con lápices acuarelables en
+          temas como sus "PACIENCIAS" entre las que hay una interesante
+          colección de pai pais, y su colección de "CAPRICHOS", en la que la
+          figura insinuada o esquemática de la cabeza femenina, sostiene
+          licencias florales u otras fantasías.
         </p>
         <img src="..\..\flores.jpg" style={{ maxWidth: '100%' }} />
         <p>
-          El pintor utiliza diferentes tipos de pintura según las
-          características de la habitación, el tipo de superficie y el resultado
-          buscado. Así, emplea pintura metálica para cubrir tuberías y
-          recipientes metálicos, esmalte para los radiadores o pintura acrílica
-          para las zonas húmedas o afectadas por la grasa.
+          Podría concluirse que en la obra de Tana hay predilección por los
+          temas sencillos y próximos y una gran pasión por el color.
         </p>
       </section>
       <footer>

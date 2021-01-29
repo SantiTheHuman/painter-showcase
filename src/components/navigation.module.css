@@ -45,7 +45,7 @@ header {
 
 .navigationItem {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   color: rgba(83, 67, 67, 0.719);
 }
@@ -71,7 +71,7 @@ header {
 
 .rotulo img {
   /* object-fit: contain; */
-  width: 80%;
+  width: 100%;
   /* max-height: 100%; */
 }
 
