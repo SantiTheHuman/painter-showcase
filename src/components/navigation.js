@@ -4,14 +4,16 @@ import styles from './navigation.module.css'
 
 export default () => (
   <header>
-    {/* <div className={styles.navContainer}> */}
     <nav role="navigation" className={styles.navigation}>
       <Link
-        className={styles.title}
-        // activeClassName={styles.current}
+        // className={styles.title}
+        className={styles.rotulo}
         to="/"
       >
-        <h1>Tana</h1>
+        <img
+          alt="Tana, el nombre artístico de la pintora."
+          src="./tana-rotulo.png"
+        ></img>
       </Link>
       <Link
         className={styles.navigationItem}
