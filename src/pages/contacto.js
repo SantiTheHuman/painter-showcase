@@ -51,7 +51,7 @@ export default function contacto(props) {
               <input type="email" name="email" id="email" />
             </label>
             <label>
-              <span>Sujeto</span>
+              <span>Asunto</span>
               <input type="text" name="subject" id="subject" />
             </label>
             <label>
