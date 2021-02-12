@@ -15,10 +15,6 @@ export default function ImageCollection({ collection }) {
     filter: {
       Colección: collection,
     },
-    // filterOptions: {
-    //   operator: 'or',
-    //   matching: 'loose'
-    // }
   }
 
   useEffect(() => {
@@ -27,9 +23,6 @@ export default function ImageCollection({ collection }) {
       (results) => {
         setImages(results)
         console.log(results)
-        // results.forEach((object, index) => {
-        //   importedImages.appendChild(`<img id="${index}" src='${object.enlace}'>`);
-        // });
       },
       (error) => {
         console.log(error)
@@ -59,24 +52,14 @@ export default function ImageCollection({ collection }) {
             images[(photoIndex + images.length - 1) % images.length].Enlace
           }
           onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={
-            () => {
-              const prevIndex = (photoIndex + images.length - 1) % images.length
-              setPhotoIndex(prevIndex)
-            }
-            // this.setState({
-            //   photoIndex: (photoIndex + images.length - 1) % images.length,
-            // })
-          }
-          onMoveNextRequest={
-            () => {
-              const nextIndex = (photoIndex + 1) % images.length
-              setPhotoIndex(nextIndex)
-            }
-            // this.setState({
-            //   photoIndex: (photoIndex + 1) % images.length,
-            // })
-          }
+          onMovePrevRequest={() => {
+            const prevIndex = (photoIndex + images.length - 1) % images.length
+            setPhotoIndex(prevIndex)
+          }}
+          onMoveNextRequest={() => {
+            const nextIndex = (photoIndex + 1) % images.length
+            setPhotoIndex(nextIndex)
+          }}
         />
       )}
       <div id="content" className="grid">
