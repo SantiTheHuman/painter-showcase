@@ -1,6 +1,4 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-// import Img from 'gatsby-image'
+import React, { useRef } from 'react'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import HeroImage from '../components/HeroImage'
@@ -15,6 +13,7 @@ class RootIndex extends React.Component {
 
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+
     return (
       <Layout location={this.props.location}>
         <Helmet title={siteTitle} />
@@ -34,27 +33,3 @@ class RootIndex extends React.Component {
 }
 
 export default RootIndex
-
-export const pageQuery = graphql`
-  query HomeQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allContentfulImagen(sort: { fields: [anyo], order: DESC }) {
-      edges {
-        node {
-          coleccion
-          titulo
-          archivoDeImagen {
-            fluid(resizingBehavior: SCALE) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
-          anyo
-        }
-      }
-    }
-  }
-`
